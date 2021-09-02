@@ -34,7 +34,7 @@ const displaySearchResult = (books) => {
         const searchResultDiv = document.createElement('div');
         searchResultDiv.classList.add('search-result-show');
         searchResultDiv.innerHTML = `
-                <p>${arrayLength} result found</p>
+                <p>${arrayLength} results found</p>
         `;
         searchCount.appendChild(searchResultDiv);
         const searchNothingFound = document.getElementById('search-nothing-found');
@@ -44,7 +44,7 @@ const displaySearchResult = (books) => {
             div.classList.add('col');
             div.innerHTML = `
         <div onclick="" class="card">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}.jpg" class="card-img-top" alt="..." />
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}.jpg" class=" card-img-top" alt="..." />
             <div class="card-body">
                 <h5 class="card-title">${book.title}</h5>
                 <h6 class="card-title">Author: ${book.author_name}</h6>
