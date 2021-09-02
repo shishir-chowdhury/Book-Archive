@@ -1,7 +1,7 @@
 #search-not-found, #search-nothing-found{
     display: none;
 }
-.card img{   
+.card-img-top{   
      background-image: url('http://placehold.it/1000x1000'), url('http://placehold.it/500x500');
      background-repeat:no-repeat;
      
