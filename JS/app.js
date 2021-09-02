@@ -25,11 +25,14 @@ const displaySearchResult = (books) => {
     if (books.length === 0) {
         const searchNothingFound = document.getElementById('search-nothing-found');
         searchNothingFound.style.display = 'block';
+        const searchCount = document.getElementById('search-count');
+        searchCount.style.display = 'none';
     }
     else {
         const arrayLength = books.length;
         console.log(arrayLength);
         const searchCount = document.getElementById('search-count');
+        searchCount.style.display = 'block';
         searchCount.textContent = '';
         const searchResultDiv = document.createElement('div');
         searchResultDiv.classList.add('search-result-show');
@@ -44,7 +47,7 @@ const displaySearchResult = (books) => {
             div.classList.add('col');
             div.innerHTML = `
         <div onclick="" class="card">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}.jpg" class=" card-img-top" alt="..." />
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class=" card-img-top" alt="..." />
             <div class="card-body">
                 <h5 class="card-title">${book.title}</h5>
                 <h6 class="card-title">Author: ${book.author_name}</h6>
