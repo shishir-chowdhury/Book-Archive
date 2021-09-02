@@ -10,8 +10,8 @@ const searchBook = () => {
         // load data
         const url = `https://openlibrary.org/search.json?q=${searchText}`;
         fetch(url)
-            .then((res) => res.json())
-            .then((data) => displaySearchResult(data.docs));
+            .then(res => res.json())
+            .then(data => displaySearchResult(data.docs));
         const searchNotFound = document.getElementById('search-not-found');
         searchNotFound.style.display = 'none';
     }
@@ -22,11 +22,21 @@ const displaySearchResult = (books) => {
     console.log(books);
     const searchResult = document.getElementById("search-result");
     searchResult.textContent = '';
-    if (books.length == 0) {
+    if (books.length === 0) {
         const searchNothingFound = document.getElementById('search-nothing-found');
         searchNothingFound.style.display = 'block';
     }
     else {
+        const arrayLength = books.length;
+        console.log(arrayLength);
+        const searchCount = document.getElementById('search-count');
+        searchCount.textContent = '';
+        const searchResultDiv = document.createElement('div');
+        searchResultDiv.classList.add('search-result-show');
+        searchResultDiv.innerHTML = `
+                <p>${arrayLength} result found</p>
+        `;
+        searchCount.appendChild(searchResultDiv);
         const searchNothingFound = document.getElementById('search-nothing-found');
         searchNothingFound.style.display = 'none';
         books.forEach((book) => {
